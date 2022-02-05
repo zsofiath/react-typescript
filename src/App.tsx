@@ -10,10 +10,17 @@ function App() {
       return [...todo, new Todo(todoText)];
     });
   }
+
+  const deleteTodoHandler = (id: string) => {
+    settodos(todos => {
+      return todos.filter(t => t.id !== id);
+    });
+  }
+  
   return (
     <div>
       <NewTodo onAddTodo={addTodoHandler}/>
-      <Todos items={todos} />
+      <Todos deleteTodo={deleteTodoHandler} items={todos} />
     </div>
   );
 }
