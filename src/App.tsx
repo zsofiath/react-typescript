@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
+import { NewTodo } from "./components/NewTodo";
 import { Todos } from "./components/Todos";
 import Todo from "./models/todo";
 
 function App() {
-  const todos = [
-    new Todo('Muradin Bronzebeard'),
-    new Todo('Arthat Menethil')
-  ];
+  const [todos, settodos] = useState<Todo[]>([]);
+  const addTodoHandler = (todoText: string) => {
+    settodos(todo => {
+      return [...todo, new Todo(todoText)];
+    });
+  }
   return (
     <div>
+      <NewTodo onAddTodo={addTodoHandler}/>
       <Todos items={todos} />
     </div>
   );
