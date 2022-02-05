@@ -1,17 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useState } from "react";
+import { TodoContext } from "../store/todo-context";
 
-export const NewTodo: React.FC<{onAddTodo: (str: string) => void}> = (props) => {
-//   const todoTextInputRef = useRef<HTMLInputElement>(null);
+export const NewTodo: React.FC = () => {
+  const todoCtx = useContext(TodoContext);
   const [text, settext] = useState('');
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
-    // const enteredText = todoTextInputRef.current?.value;
     if(text?.trim().length === 0) {
         return;
     }
 
-    // props.onAddTodo(enteredText!);
-    props.onAddTodo(text);
+    todoCtx.addTodo(text);
     settext('');
   };
 
@@ -22,7 +21,7 @@ export const NewTodo: React.FC<{onAddTodo: (str: string) => void}> = (props) => 
   return (
     <form onSubmit={submitHandler}>
       <label htmlFor="text">Todo text</label>
-      <input id="text" /*ref={todoTextInputRef}*/ value={text} onChange={onChangeHandler}/>
+      <input id="text" value={text} onChange={onChangeHandler}/>
       <button>Add Todo</button>
 
     </form>
