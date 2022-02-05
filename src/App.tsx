@@ -1,10 +1,10 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { Todos } from "./components/Todos";
 
 function App() {
   return (
-    <div className="App">
-
+    <div>
+      <Todos items={['ghffhh', 'poiojiojo']} />
     </div>
   );
 }
