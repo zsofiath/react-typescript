@@ -5,12 +5,14 @@ import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 
 const useStyles: any = makeStyles(()=>({
     typographyStyles: {
-        flex:1
+        flex:1,
+        color: props => {
+          return props ? 'red' : 'white'
+        }
     }
 }))
 export const Header = () => {
-    const classes = useStyles();
-    console.log(classes);
+    const classes = useStyles(false);
     
   return (
     <AppBar position="static">

@@ -10,7 +10,7 @@ export const TodoItem: React.FC<
   Todo & { onDeleteTodo: () => void }
 > = (props) => {
   return (
-    <TodoCard>
+    <TodoCard light={props.text.length%2 == 1}>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {props.text}
