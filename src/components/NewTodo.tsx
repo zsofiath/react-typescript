@@ -1,3 +1,4 @@
+import { Button, Input, TextField, Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { TodoContext } from "../store/todo-context";
 
@@ -14,16 +15,18 @@ export const NewTodo: React.FC = () => {
     settext('');
   };
 
-  const onChangeHandler = (event: React.FormEvent<HTMLInputElement>) => {
+  const onChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
       settext(event.currentTarget.value);
   }
 
   return (
-    <form onSubmit={submitHandler}>
-      <label htmlFor="text">Todo text</label>
-      <input id="text" value={text} onChange={onChangeHandler}/>
-      <button>Add Todo</button>
+    <>
+    <Typography mb={3} variant="h4">Create new todo</Typography>
+    <form  onSubmit={submitHandler}>
+      <TextField fullWidth size="small" id="text" label="Todo text" value={text} onChange={onChangeHandler}/>
+      <Button fullWidth variant="contained" type='submit'>Add Todo</Button>
 
     </form>
+    </>
   );
 };
