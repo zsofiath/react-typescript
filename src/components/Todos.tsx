@@ -7,16 +7,17 @@ export const Todos: React.FC = () => {
   const todoContext = useContext(TodoContext);
   return (
     <div>
-      {/* <Grid container spacing={2}> */}
+      <Grid container spacing={3}>
         {todoContext.items.map((item) => (
           <Grid key={item.id} item xs={12} sm={6} md={4}>
             <TodoItem
+              id={item.id}
               text={item.text}
               onDeleteTodo={todoContext.removeTodo.bind(null, item.id)}
             />
           </Grid>
         ))}
-      {/* </Grid> */}
+      </Grid>
     </div>
   );
 };

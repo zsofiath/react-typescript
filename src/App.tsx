@@ -21,26 +21,27 @@ function Copyright() {
 function App() {
   return (
     <>
-    <Header></Header>
-    <Container maxWidth="sm">
-      <Title>Todos</Title>
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App example
-        </Typography>
-        <TodoContextProvider>
-          <Grid container>
-            <Grid item xs={12}>
-              <NewTodo />
+      <Header></Header>
+      <Container maxWidth="lg">
+        <Box sx={{ my: 4 }}>
+          <Typography variant="h4" component="h1" gutterBottom>
+            Create React App example
+          </Typography>
+          <TodoContextProvider>
+            <Title>Todos</Title>
+
+            <Grid container spacing={3}>
+              <Grid item xs={12}>
+                <NewTodo />
+              </Grid>
+              <Grid item xs={12}>
+                <Todos />
+              </Grid>
             </Grid>
-            <Grid item xs={12}>
-              <Todos />
-            </Grid>
-          </Grid>
-        </TodoContextProvider>
-        <Copyright />
-      </Box>
-    </Container>
+          </TodoContextProvider>
+          <Copyright />
+        </Box>
+      </Container>
     </>
   );
 }
