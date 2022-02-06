@@ -1,5 +1,5 @@
 import { Badge, Link, Typography } from "@mui/material";
-import MailIcon from '@mui/icons-material/Mail';
+import MailIcon from "@mui/icons-material/Mail";
 import React, { useContext } from "react";
 import { TodoContext } from "../store/todo-context";
 import SvgIcon from "@mui/material/SvgIcon";
@@ -17,9 +17,12 @@ export const Title: React.FC = (props) => {
   return (
     <>
       <h1>
-        {props.children} 
+        {props.children}
         <Badge color="secondary" badgeContent={context.items.length} max={3}>
           <MailIcon />
+        </Badge>
+        <Badge badgeContent='!' color="info">
+          <MailIcon color="action" />
         </Badge>
       </h1>
       <Typography sx={{ mt: 6, mb: 3 }} color="text.secondary">

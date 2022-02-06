@@ -1,9 +1,9 @@
-import { Box, Container, Grid, Link, Typography } from "@mui/material";
+import { Badge, Box, Container, Grid, Link, Typography } from "@mui/material";
 import { Header } from "./components/Header";
 import { NewTodo } from "./components/NewTodo";
 import { Title } from "./components/Title";
 import { Todos } from "./components/Todos";
-import {BasicModal} from "./components/UI/BasicModal";
+import { BasicModal } from "./components/UI/BasicModal";
 import TodoContextProvider from "./store/todo-context";
 
 function Copyright() {
@@ -33,9 +33,11 @@ function App() {
 
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <BasicModal>
-                  <NewTodo />
-                </BasicModal>
+                <Badge badgeContent="!" color="error">
+                  <BasicModal>
+                    <NewTodo />
+                  </BasicModal>
+                </Badge>
               </Grid>
               <Grid item xs={12}>
                 <Todos />

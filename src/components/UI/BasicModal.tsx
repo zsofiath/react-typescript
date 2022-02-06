@@ -22,7 +22,7 @@ export const BasicModal: React.FC = (props) => {
 
   return (
     <div>
-      <Button onClick={ctx.openForm}>Open modal</Button>
+      <Button variant="outlined" onClick={ctx.openForm}>Open modal</Button>
       <Modal
         open={ctx.isNewTodoFormVisible}
         onClose={ctx.closeForm}
