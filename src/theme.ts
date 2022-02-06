@@ -1,19 +1,22 @@
-import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
+import { blueGrey } from '@mui/material/colors';
 
-// A custom theme for this app
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: blueGrey[500],
+      "50":blueGrey[50],
+      "100":blueGrey[100],
+      "200":blueGrey[200],
+      "300":blueGrey[300],
+      "400":blueGrey[400],
+      "600":blueGrey[600],
+      "700":blueGrey[700],
+      "800":blueGrey[800],
+      "900":blueGrey[900]
     },
     secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: red.A400,
+      main: '#f44336',
     },
   },
 });
-
-export default theme;

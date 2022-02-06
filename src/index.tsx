@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { ThemeProvider } from "@mui/material";
-import theme from "./theme";
+import {theme} from "./theme";
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
